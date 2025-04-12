@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background: #fff;
+  color: #000;
+  border-bottom: 1px solid #ddd;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.logo-img {
+  border-bottom: 1px solid rgb(0, 0, 0);
+  border-left: 1px solid rgb(0, 0, 0);
+  border-right: 1px solid rgb(0, 0, 0);
+  border-top: 1px solid rgb(0, 0, 0);
+}
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-right: 20px;
+}
+nav ul li {
+  display: inline;
+}
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+.hide {
+  display: none;
+}
+#menu {
+  margin-top: 10px;
+}
+.frame {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px 5px;
+  text-align: center;
+}
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.toggle-switch {
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+.welcome-text {
+  font-size: 14px;
+  color: #000;
+}
+/* .v112 {
+    position: absolute;
+}
+.v10 {
+    position: absolute;
+    order: 1;
+} */
+.g141 {
+  position: absolute;
+  width: 100%;
+  z-index: -2;
+}
+.r31 {
+  /* Rectangle 31 */
+  position: absolute;
+  width: auto;
+  height: 3202px;
+  left: 175px;
+  right: 175px;
+  top: 80px;
+  z-index: -1;
+}
+.sections {
+  text-align: center;
+  padding: 40px;
+  background-color: #fff;
+  width: 80%;
+  height: 100%;
+}
+.sections h2 {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0%;
+  margin-bottom: 40px;
+}
+.sections hr {
+  width: 50%;
+  margin: 0 auto 10px auto;
+  border: 0.5px solid #888;
+}
+.first-game {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0%;
+}
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 600px;
+  margin-bottom: 40px;
+  width: 215px;
+  height: 35px;
+}
+.input-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  width: 200px;
+  background: #ddd;
+}
+.input-container button {
+  padding: 10px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+.result {
+  text-align: center;
+  margin-top: 10px;
+  white-space: nowrap;
+  /* margin-left: 200px; */
+}
+
+.section-2 {
+  text-align: center;
+  padding: 40px;
+  margin-top: -80px;
+  background-color: white;
+  width: 80%;
+}
+
+.second-game {
+  margin-top: 50px;
+  margin-bottom: 40px;
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0%;
+}
+
+.guessing-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  width: 125px;
+  margin-left: 20px;
+  background: #ddd;
+}
+
+.second-button {
+  padding: 10px;
+  margin-left: -5px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+.message {
+  text-align: center;
+  margin-top: 10px;
+  color: green;
+  white-space: nowrap;
+  margin-left: 220px;
+}
+
+.second-div {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 600px;
+  margin-bottom: 40px;
+  width: 215px;
+  height: 35px;
+}
+
+.section-2-hr {
+  width: 50%;
+  margin: 0 auto 10px auto;
+  border: 0.5px solid #888;
+}
+
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .r31 {
+    align-self: center;
+    width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section h2,
+  .section-2 h1 {
+    font-size: 1.5rem;
+  }
+
+  .input-container,
+  .second-div {
+    position: relative;
+    left: -370px;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .input-container input,
+  .guessing-input {
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .input-container button,
+  .second-button {
+    border-radius: 20px;
+    width: 100%;
+  }
+  .r31 {
+    left: 140px;
+    width: 500px;
+  }
+  .second-game {
+    margin-bottom: 70px;
+  }
+  .first-game {
+    margin-bottom: 70px;
+  }
+}

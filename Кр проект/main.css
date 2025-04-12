@@ -1,0 +1,574 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 36px; */
+  background-image: url(./images/background.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.aside {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 99%;
+}
+.container {
+}
+/* header */
+.header {
+  background-color: white;
+  width: 80%;
+}
+.inner-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+.title {
+  height: 20px;
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin: 0;
+  padding-top: 36px;
+}
+.dinosaur-image {
+  width: 720px;
+  height: 241px;
+}
+.line-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line-image {
+  width: 536px;
+}
+/* header-end */
+
+/* nav */
+.nav-content {
+  background-color: white;
+  width: 80%;
+  padding-top: 36px;
+}
+.container_ball {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 36px;
+}
+.footBall_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.football_text {
+  margin: 0;
+  height: 20px;
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./images/fottball.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 720px;
+  height: 220px;
+  overflow: hidden;
+}
+.ball {
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  position: absolute;
+}
+.ball-image {
+  width: 60px;
+  height: 60px;
+}
+/* nav-end */
+
+/* section */
+.section {
+  background-color: white;
+  width: 80%;
+  padding-top: 36px;
+}
+.number-input-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+.number-input-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+.instruction-text {
+  margin: 0;
+  height: 20px;
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 38px;
+}
+.number-button {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border-color: rgb(215, 215, 215);
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  background-color: rgb(215, 215, 215);
+
+  flex: 1;
+  color: rgb(126, 126, 126);
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+  transform: scale(1);
+  transition-duration: 0.5s;
+}
+.number-button:hover,
+.number-button:focus {
+  background-color: rgb(182, 182, 182);
+  color: #fff;
+  border-color: rgb(182, 182, 182);
+  transform: scale(0.99);
+}
+.largest-number {
+  margin: 0;
+  height: 15px;
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+/* section-end */
+
+/* footer */
+.footer {
+  background-color: white;
+  width: 80%;
+  padding-top: 36px;
+}
+.imgForSlider {
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+}
+.container_box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+.team-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+}
+.team-member {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team-title {
+  margin: 0;
+  height: 20px;
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.slideshow-container {
+  width: 100%;
+}
+.buttton_click_slide_box {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 100%;
+}
+.use_box {
+}
+.imgForButton {
+  overflow: hidden;
+  width: 50px;
+  height: 100px;
+}
+.prev,
+.next {
+  cursor: pointer;
+}
+.next {
+}
+.prev:hover,
+.next:hover {
+  text-decoration: none;
+  transition: 0.6s ease;
+}
+.text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+  text-align: center;
+  gap: 20px;
+}
+.name {
+  height: 17px;
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0%;
+  text-align: center;
+  margin: 0;
+}
+.text_name {
+  width: 244px;
+  height: 15px;
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0%;
+  text-align: center;
+  margin: 0;
+}
+.mySlides_fade {
+}
+.numbertext {
+}
+.style_dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+.dot {
+  cursor: pointer;
+  height: 3px;
+  width: 18px;
+  background-color: #bbb;
+  display: inline-block;
+  border-radius: 3px;
+  transition: all 0.5s ease-out;
+  transform: scale(1);
+  transition-duration: 0.5s;
+}
+.active,
+.dot:hover,
+.dot:focus {
+  background-color: #717171;
+  animation: linear;
+  animation-duration: 0.3s;
+  animation-delay: 0.2s;
+  width: 25px;
+  height: 3px;
+
+  background-color: #525252;
+  color: #fff;
+  border-color: #525252;
+  transform: scale(0.99);
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+.custom-line-image {
+}
+/* footer-end */
+
+/* adaptive */
+@media (max-width: 1034px) {
+  .dinosaur-image {
+    width: 520px;
+    height: 160px;
+  }
+
+  .title,
+  .football_text,
+  .instruction-text,
+  .team-title {
+    font-size: 14px;
+  }
+  .text_name {
+    font-size: 9px;
+  }
+
+  .container_ball,
+  .number-input-wrapper,
+  .team-container {
+    flex-direction: column;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .number-button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .buttton_click_slide_box {
+    width: 10%;
+  }
+  .container_box {
+    display: flex;
+    justify-content: center;
+  }
+  .slideshow-container {
+    width: 100%;
+  }
+
+  .field {
+    width: 520px;
+    height: 160px;
+  }
+
+  .line-image {
+    width: 436px;
+  }
+
+  .ball {
+  }
+  .ball-image {
+    width: 45px;
+    height: 45px;
+  }
+}
+@media (max-width: 656px) {
+  .field {
+    width: 420px;
+    height: 130px;
+  }
+}
+@media (max-width: 514px) {
+  .dinosaur-image {
+    width: 390px;
+    height: 110px;
+  }
+
+  .title,
+  .football_text,
+  .instruction-text,
+  .team-title {
+    font-size: 12px;
+  }
+
+  .container_ball,
+  .number-input-wrapper,
+  .team-container {
+    flex-direction: column;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .number-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .buttton_click_slide_box {
+    width: 5%;
+  }
+  .container_box {
+    display: flex;
+    justify-content: center;
+  }
+  .slideshow-container {
+    width: 100%;
+  }
+
+  .field {
+    width: 320px;
+    height: 100px;
+  }
+
+  .line-image {
+    width: 236px;
+    height: 1px;
+  }
+
+  .imgForButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ball {
+  }
+  .ball-image {
+    width: 30px;
+    height: 30px;
+  }
+
+  .imgForSlider {
+    width: 100px;
+    height: 100px;
+  }
+  .text_name {
+    width: 160px;
+  }
+  .style_dot {
+    gap: 2px;
+  }
+  .dot {
+    height: 2px;
+    width: 10px;
+  }
+  .active,
+  .dot:hover,
+  .dot:focus {
+    width: 12px;
+    height: 2px;
+  }
+}
+
+@media (max-width: 380px) {
+  .dinosaur-image {
+    width: 290px;
+    height: 70px;
+  }
+
+  .title,
+  .football_text,
+  .instruction-text,
+  .team-title {
+    font-size: 12px;
+  }
+
+  .container_ball,
+  .number-input-wrapper,
+  .team-container {
+    flex-direction: column;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .number-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .buttton_click_slide_box {
+    width: 0;
+  }
+  .container_box {
+    display: flex;
+    justify-content: center;
+  }
+  .slideshow-container {
+    width: 100%;
+  }
+
+  .field {
+    width: 200px;
+    height: 65px;
+  }
+
+  .largest-number {
+    font-size: 10px;
+    width: 160px;
+  }
+
+  .line-image {
+    width: 156px;
+    height: 1px;
+  }
+
+  .imgForButton {
+    width: 20px;
+    height: 20px;
+  }
+
+  .ball {
+  }
+  .ball-image {
+    width: 30px;
+    height: 30px;
+  }
+
+  .imgForSlider {
+    width: 100px;
+    height: 100px;
+  }
+
+  .text_name {
+    width: 160px;
+  }
+
+  .style_dot {
+    gap: 2px;
+  }
+  .dot {
+    height: 2px;
+    width: 10px;
+  }
+
+  .active,
+  .dot:hover,
+  .dot:focus {
+    width: 12px;
+    height: 2px;
+  }
+}
+/* adaptive_end */
