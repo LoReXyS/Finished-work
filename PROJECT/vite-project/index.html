@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>vite-project</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <div class="container">
+          <img
+            src="./src/imgs/logo.png"
+            alt="there's a logo"
+            class="img-logo-header"
+          />
+          <div class="header-container">
+            <h2 class="txt-Best-Events">FIND BEST EVENTS AROUND THE WORLD</h2>
+            <ul class="search-box">
+              <li class="search-box-li">
+                <input
+                  type="text"
+                  placeholder="Start searching"
+                  class="search-box-input"
+                />
+              </li>
+              <li class="search-box-li">
+                <input
+                  type="text"
+                  placeholder="Choose country"
+                  class="search-box-input"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <section class="event-secttion">
+        <div class="container">
+          <ul class="event-ul"></ul>
+          <ul class="event-list-btn">
+            <li><button class="btn-item">1</button></li>
+            <li><button class="btn-item">2</button></li>
+            <li><button class="btn-item">3</button></li>
+            <li><button class="btn-item">4</button></li>
+            <li><button class="btn-item theFifthBtn">5</button></li>
+            <!-- <li><p class="p-event">...</p></li>
+            <li><button class="btn-item">29</button></li> -->
+          </ul>
+        </div>
+      </section>
+      <footer class="footer">
+        <h3 class="h3-footer">
+          © 2021 | All Rights Reserved | Developed with ♥ by GoIT Students
+        </h3>
+      </footer>
+
+      <div class="modal">
+        <div class="container div-content">
+          <div class="for-close">
+            <button class="modal-close">Close</button>
+          </div>
+          <div class="imgs2">
+            <img src="" alt="asdasdas" class="img2" />
+          </div>
+        </div>
+
+        <div class="div-modal-info">
+          <img src="" alt="" class="img-modal" />
+          <ul class="list-modal">
+            <li class="list-item-modal modal-info-item">
+              <h2 class="h2-item-modal">INFO</h2>
+              <p class="p-info-item"></p>
+            </li>
+            <li class="list-item-modal modal-when-item">
+              <h2 class="h2-item-modal">WHEN</h2>
+              <p class="p-when-item"></p>
+            </li>
+            <li class="list-item-modal modal-where-item">
+              <h2 class="h2-item-modal">WHERE</h2>
+              <p class="p-where-item"></p>
+            </li>
+            <li class="list-item-modal modal-who-item">
+              <h2 class="h2-item-modal">WHO</h2>
+              <p class="p-who-item"></p>
+            </li>
+            <li class="list-item-modal modal-prices-item">
+              <h2 class="h2-item-modal">PRICES</h2>
+              <p class="p-prices-item"></p>
+            </li>
+          </ul>
+        </div>
+        <div class="imgs2">
+          <button class="more-btn">MORE FROM THIS AUTHOR</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

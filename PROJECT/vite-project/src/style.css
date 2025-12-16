@@ -1,0 +1,472 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Отключение анимаций */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* header */
+.header {
+  background-image: url('./imgs/header.png');
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  position: relative;
+}
+
+.txt-Best-Events {
+  width: 600px;
+  color: rgba(220, 86, 197, 1);
+  font-family: 'Montserrat';
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 61px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 52px;
+}
+
+.search-box-li {
+  list-style: none;
+  margin-top: 90px;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+}
+
+.search-box-li {
+  list-style: none;
+  margin-right: 45px;
+}
+
+.search-box-input {
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.2);
+  width: 270px;
+  height: 40px;
+  padding: 0 15px;
+  border: none;
+  color: white;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .img-logo-header {
+  position: absolute;
+  left: -250px;
+  top: -220px;
+  background-image: url(/vite-project/imgs/logo.png);
+} */
+.img-logo-header {
+  position: absolute;
+  left: -10px;
+  /* top: -220px; */
+  /* width: 500px; */
+  /* height: auto; */
+}
+
+/* event section */
+.event-list-btn {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 50px;
+}
+
+.event-secttion {
+  height: auto;
+  background-image: url(./imgs/bg.png);
+}
+
+.btn-item {
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  color: white;
+  font-family: Montserrat;
+  font-size: 16px;
+}
+
+.btn-item:hover {
+  border: 1px solid rgba(220, 86, 197, 1);
+  border-radius: 10px 0 10px 0;
+  height: 30px;
+}
+
+.p-event {
+  color: white;
+  font-family: 'Montserrat';
+  font-size: 18px;
+  text-align: center;
+}
+
+.event-p-name {
+  color: rgba(220, 86, 197, 1);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  max-width: 60%;
+}
+
+.event-img {
+  width: 180px;
+  height: 227px;
+  border-radius: 50px 0 50px 0;
+}
+
+.event-p-date {
+  color: white;
+  font-family: Montserrat;
+  font-size: 16px;
+  text-align: center;
+}
+
+.event-p-place {
+  color: white;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ---- 🔥 ГОЛОВНЕ ОНОВЛЕННЯ: 4 КАРТКИ В РЯД ---- */
+.event-ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.event-li {
+  width: calc(25% - 40px);
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+/* footer */
+.footer {
+  background-color: rgb(66, 65, 65);
+}
+
+.h3-footer {
+  color: rgb(147, 147, 147);
+  font-family: Montserrat;
+  font-size: 16px;
+  text-align: center;
+}
+/* modal */
+/* .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 500px;
+  top: 20px;
+
+  overflow: auto;
+
+  width: 800px;
+  height: 920px;
+  border-radius: 300px 0px 300px 0px;
+  background: rgba(255, 242, 253, 1);
+} */
+/* .for-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
+  border-radius: 300px 0px 300px 0px;
+  background: rgba(255, 242, 253, 1);
+  width: 930px;
+  height: 900px;
+}
+.modal-content {
+  width: 930px;
+  height: 1023px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 300px 0px 300px 0px;
+  background: rgba(255, 242, 253, 1);
+}
+
+.h2-item-modal {
+  color: rgba(220, 86, 197, 1);
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.list-item-modal {
+  margin-bottom: 35px;
+}
+.for-close {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+.imgs2 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.div-modal-info {
+  display: flex;
+  justify-content: space-around;
+}
+.modal-close {
+  color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  background-color: rgba(76, 0, 254, 1);
+}
+.img-modal {
+  /* pic */
+  width: 300px;
+  height: 630px;
+}
+.more-btn {
+  border-radius: 300px 0px 300px 0px;
+  background: rgba(255, 242, 253, 1);
+  box-sizing: border-box;
+  border: 1px solid rgba(76, 0, 254, 1);
+  border-radius: 5px;
+}
+.no-scroll {
+  overflow: hidden;
+}
+.img2 {
+  /* pic circle */
+  width: 132px;
+  height: 132px;
+  border-radius: 50px 0px 50px 0px;
+}
+.p-info-item {
+  color: rgba(14, 14, 14, 1);
+
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+/* адаптив */
+@media screen and (max-width: 1400px) {
+  .modal {
+    width: 650px;
+    height: 780px;
+  }
+  .img-modal {
+    /* pic */
+    /* width: 233px; */
+    /* height: 416px; */
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .modal {
+    /* modal */
+    width: 595px;
+    height: 831px;
+    /* left: 150px; */
+  }
+  .img-logo-header {
+    width: 150px;
+    /* left: -160px; */
+    /* top: -180px; */
+
+    /* content: url('/vite-project/imgs/tablet/logotablet.png'); */
+  }
+  .txt-Best-Events {
+    color: rgba(220, 86, 197, 1);
+
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 37px;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .modal {
+    /* bg */
+    width: 400px;
+    height: 800px;
+  }
+  .div-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .div-modal-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-modal {
+    display: none;
+  }
+  .img-logo-header {
+    width: 120px;
+    /* left: -100px; */
+    /* top: -90px; */
+  }
+  .txt-Best-Events {
+    color: rgba(220, 86, 197, 1);
+
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 710px) {
+  .search-box {
+    flex-direction: column;
+    margin-right: 0;
+  }
+  .search-box-li {
+    margin-bottom: 15px;
+    margin-right: 0;
+    margin-top: 25px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .img-logo-header {
+  }
+}
+@media screen and (max-width: 600px) {
+  .txt-Best-Events {
+    width: 100%;
+    margin-top: 120px;
+  }
+  .img-logo-header {
+    width: 160px;
+    /* left: -70px; */
+    /* top: -110px; */
+  }
+}
+@media screen and (max-width: 400px) {
+  .modal {
+    /* bg */
+    width: 300px;
+    height: 890px;
+  }
+  .list-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal-where-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .img-logo-header {
+    width: 130px;
+    /* left: -70px; */
+    /* top: -110px; */
+  }
+}
