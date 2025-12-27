@@ -1,3 +1,6 @@
+const arrayForBasket = [];
+let currentModalEvent = null;
+
 let pageSize = 20;
 let key = 'xt0Eok4inQpoomI6HWOOPYsC4QG5HpKN';
 const maxPage = 20; // максимум сторінок (як у тебе був ліміт 20)
@@ -100,6 +103,7 @@ closeModalBtn.addEventListener('click', () => {
 let modal = document.querySelector('.modal');
 let lastEvents = [];
 async function renderModal(event) {
+  currentModalEvent = event; // 👈 зберігаємо подію
   // Відкрити модалку
   modal.style.display = 'block';
   document.body.style.overflow = 'hidden';
@@ -143,9 +147,100 @@ eventUl.addEventListener('click', (e) => {
     .then((r) => r.json())
     .then((data) => {
       const event = data._embedded.events[index];
+      // addToBasket(event);
       renderModal(event, li);
+      console.log(arrayForBasket);
     })
     .catch((err) => {
       console.error('Fetch error:', err);
     });
 });
+// basket
+
+const basketBtn = document.querySelector('.basket');
+const basketModal = document.querySelector('.modal-basket');
+const basketCloseBtn = document.querySelector('.modal-close-basket');
+basketBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  // basketModal.classList.add('modal-basket');
+  // basketModal.classList.remove('modal-basket-closed');
+  basketModal.style.display = 'block';
+  // document.body.style.overflow = 'hidden';
+});
+basketCloseBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  // basketModal.style.display = 'none';
+  // document.body.style.overflow = 'auto';
+  basketModal.classList.add('modal-basket');
+  basketModal.classList.remove('modal-basket');
+});
+const moreBtn = document.querySelector('.more-btn');
+moreBtn.addEventListener('click', (e) => {
+  moreBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (!currentModalEvent) return;
+
+    addToBasket(currentModalEvent);
+  });
+  renderModalOfBasket();
+});
+function addToBasket(event) {
+  const exists = arrayForBasket.some((e) => e.id === event.id);
+  if (exists) return;
+  arrayForBasket.push(event);
+  console.log('Added to basket:', event);
+  console.log(currentModalEvent);
+}
+
+let ulBasket = document.querySelector('.basket-list');
+function renderModalOfBasket() {
+  ulBasket.innerHTML = '';
+  arrayForBasket.forEach((event) => {
+    const li = document.createElement('li');
+    li.className = 'basket-li';
+    li.innerHTML = `
+      <img class="basket-img" src="${event.images[0].url}">
+      <p class="basket-p-name">${event.name}</p>
+      <p class="basket-p-date">Date: ${event.dates.start.localDate}</p>
+      <p class="basket-p-place">Place: ${event.dates.timezone}</p>
+    `;
+    ulBasket.appendChild(li);
+  });
+}
+/* ===== MODAL ANIMATION JS ===== */
+
+// основна модалка
+function openModal() {
+  modal.style.display = 'block';
+  requestAnimationFrame(() => {
+    modal.classList.add('is-open');
+  });
+  document.body.classList.add('no-scroll');
+}
+
+function closeModal() {
+  modal.classList.remove('is-open');
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 350);
+  document.body.classList.remove('no-scroll');
+}
+
+// кошик
+function openBasket() {
+  basketModal.style.display = 'block';
+  requestAnimationFrame(() => {
+    basketModal.classList.add('is-open');
+  });
+  document.body.classList.add('no-scroll');
+}
+
+function closeBasket() {
+  basketModal.classList.remove('is-open');
+  setTimeout(() => {
+    basketModal.style.display = 'none';
+  }, 300);
+  document.body.classList.remove('no-scroll');
+}
