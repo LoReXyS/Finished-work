@@ -1,3 +1,5 @@
+const globalArray = [];
+
 const arrayForBasket = [];
 let currentModalEvent = null;
 
@@ -26,6 +28,8 @@ function loadPage(page) {
         `;
         eventUl.appendChild(li);
       });
+      globalArray.push(...data._embedded.events);
+      console.log(globalArray);
 
       currentPage = data.page.number;
     })
@@ -97,16 +101,17 @@ function shiftBackward() {
 // modal
 let closeModalBtn = document.querySelector('.modal-close');
 closeModalBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-  document.body.style.overflow = 'auto';
+  modal.classList.remove('is-open');
+  // modal.classList.add('modal-closed');
 });
 let modal = document.querySelector('.modal');
 let lastEvents = [];
 async function renderModal(event) {
   currentModalEvent = event; // 👈 зберігаємо подію
   // Відкрити модалку
-  modal.style.display = 'block';
-  document.body.style.overflow = 'hidden';
+  modal.classList.add('is-open');
+  // modal.classList.remove('closed-modal');
+
   // Елементи модалки
   const infoP = document.querySelector('.p-info-item');
   const whenP = document.querySelector('.p-when-item');
@@ -142,50 +147,88 @@ eventUl.addEventListener('click', (e) => {
   if (!li) return;
   const index = Array.from(eventUl.children).indexOf(li);
   const eventIndex = currentPage * pageSize + index;
-  const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${key}&page=${currentPage}&size=${pageSize}`;
-  fetch(url)
-    .then((r) => r.json())
-    .then((data) => {
-      const event = data._embedded.events[index];
-      // addToBasket(event);
-      renderModal(event, li);
-      console.log(arrayForBasket);
-    })
-    .catch((err) => {
-      console.error('Fetch error:', err);
-    });
+  console.log(globalArray);
+  const event = globalArray[eventIndex];
+  console.log(event);
+  console.log(eventIndex);
+  currentModalEvent = event;
+  modal.classList.add('is-open');
+
+  // Елементи модалки
+  const infoP = document.querySelector('.p-info-item');
+  const whenP = document.querySelector('.p-when-item');
+  const whereP = document.querySelector('.p-where-item');
+  const whoP = document.querySelector('.p-who-item');
+  const pricesP = document.querySelector('.p-prices-item');
+  const imgTop = document.querySelector('.img2');
+  const imgModal = document.querySelector('.img-modal');
+  // Отримання даних
+  const eventName = event.name || 'No name';
+  const eventDate = event.dates?.start?.localDate || 'Unknown date';
+  const eventPlace = event._embedded?.venues?.[0]?.name || 'Unknown place';
+  const eventArtist =
+    event._embedded?.attractions?.[0]?.name || 'Unknown artist';
+  const eventImage = event.images?.[0]?.url || '';
+
+  // Вставляємо дані в модалку
+  infoP.textContent = eventName;
+  whenP.textContent = eventDate;
+  whereP.textContent = eventPlace;
+  whoP.textContent = eventArtist;
+  // pricesP.textContent = priceInfo;
+  imgTop.src = eventImage;
+  imgModal.src = eventImage;
+  console.log('Modal loaded:', event);
+  // const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${key}&page=${currentPage}&size=${pageSize}`;
+  // fetch(url)
+  //   .then((r) => r.json())
+  //   .then((data) => {
+  //     const event = data._embedded.events[index];
+  //     // addToBasket(event);
+  //     renderModal(event, li);
+  //     console.log(arrayForBasket);
+  //   })
+  //   .catch((err) => {
+  //     console.error('Fetch error:', err);
+  //   });
 });
 // basket
-
 const basketBtn = document.querySelector('.basket');
-const basketModal = document.querySelector('.modal-basket');
+const basketModal = document.querySelector('.modalbasket');
 const basketCloseBtn = document.querySelector('.modal-close-basket');
 basketBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
-  // basketModal.classList.add('modal-basket');
-  // basketModal.classList.remove('modal-basket-closed');
-  basketModal.style.display = 'block';
-  // document.body.style.overflow = 'hidden';
+  basketModal.classList.add('is-openbsk');
 });
 basketCloseBtn.addEventListener('click', (e) => {
   e.preventDefault();
   // basketModal.style.display = 'none';
   // document.body.style.overflow = 'auto';
-  basketModal.classList.add('modal-basket');
-  basketModal.classList.remove('modal-basket');
+  basketModal.classList.remove('is-openbsk');
 });
 const moreBtn = document.querySelector('.more-btn');
+// moreBtn.addEventListener('click', (e) => {
+//   moreBtn.addEventListener('click', (e) => {
+//     e.preventDefault();
+
+//     if (!currentModalEvent) return;
+
+//     addToBasket(currentModalEvent);
+//   });
+//   renderModalOfBasket();
+// });
 moreBtn.addEventListener('click', (e) => {
-  moreBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+  e.preventDefault();
+  console.log('click');
 
-    if (!currentModalEvent) return;
+  if (!currentModalEvent) return;
 
-    addToBasket(currentModalEvent);
-  });
+  addToBasket(currentModalEvent);
   renderModalOfBasket();
+  // basketModal.classList.add('is-openbsk');
 });
+
 function addToBasket(event) {
   const exists = arrayForBasket.some((e) => e.id === event.id);
   if (exists) return;
