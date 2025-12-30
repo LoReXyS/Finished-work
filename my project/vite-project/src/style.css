@@ -49,8 +49,8 @@ a:not([class]) {
 
 /* Упрощаем работу с изображениями */
 img {
-  max-width: 100%;
-  display: block;
+  /* max-width: 100%; */
+  /* display: block; */
 }
 
 /* Указываем понятную периодичность в потоке данных у article*/
@@ -260,7 +260,7 @@ ol {
 }
 
 .listening {
-  width: 920px;
+  /* width: 920px; */
   height: 343px;
 }
 .content-of-skils-list {
@@ -283,8 +283,8 @@ ol {
   align-items: center;
   flex-direction: column;
   /* gap: 20px; */
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 10px;
+  /* margin-right: 25px; */
 }
 .writing {
   margin-bottom: 25px;
@@ -303,6 +303,7 @@ ol {
 .skils-container {
   display: flex;
 }
+
 /* about us */
 .h2-us {
   color: rgba(0, 0, 0, 1);
@@ -574,4 +575,14 @@ ol {
   text-align: left;
 
   color: rgba(0, 0, 0, 1);
+}
+/* hovers)) */
+.btn-started:hover,
+.btn-talk:hover,
+.btn-skils:hover,
+.btn-contact:hover {
+  background: rgb(78, 99, 110);
+  color: rgba(38, 50, 56, 1);
+  border: 2px solid rgba(38, 50, 56, 1);
+  cursor: pointer;
 }
