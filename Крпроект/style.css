@@ -1,0 +1,376 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  /* max-width: 100%;
+  display: block; */
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+input {
+  all: unset;
+}
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/*  */
+/*  */
+/*  */
+/*  */
+a {
+  all: unset;
+}
+.section {
+  /* background-image: url(./imgs/bg.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+}
+/* .section {
+  background-image: url(./imgs/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+} */
+/* @media screen and (max-width: 320px) {
+  .section {
+    background-size: contain; 
+  }
+} */
+
+.container {
+  width: 1090px;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+}
+.txts {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 16px;
+  font-weight: 100px;
+  line-height: 50px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 25px;
+}
+.list {
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 25%; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-content: center;
+  width: fit-content;
+}
+.item-list {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  background: rgb(217, 217, 217);
+  text-align: center;
+}
+.item-list {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-list {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  text-align: center;
+}
+.item-list {
+  margin-bottom: 36px;
+}
+/*  */
+.item-list2 {
+  border-radius: 20px;
+
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  background: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+}
+.txt-item-list2 {
+  color: rgb(255, 255, 255);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0%;
+  padding: 15px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.for-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.list2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.last-item {
+  margin-top: 20px; /* Відступ зверху */
+  align-self: center; /* Вирівнювання по центру */
+}
+/* footer */
+/* */
+/*  */
+.footer {
+  /* margin-top: 40px; */
+  /* margin-bottom: 40px; */
+}
+.containerFooter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  /* margin-left: 80px; */
+}
+a {
+  cursor: pointer;
+}
+
+.itemListSecond {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 170%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.txtListThird {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 7px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-top: 25px;
+}
+.button {
+  border-radius: 20px;
+  padding: 9px;
+  background: rgb(0, 0, 0);
+}
+.inputs {
+  border-radius: 20px;
+  margin-right: 35px;
+  box-shadow: none;
+  background: rgb(215, 215, 215);
+  padding: 13px;
+}
+.spans {
+  color: rgb(255, 255, 255);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  text-align: left;
+  padding: 20px;
+}
+/* модалка */
+
+#modal {
+  display: none;
+}
+#modal_backgroung {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0.8;
+  z-index: 90;
+}
+#modal_window {
+  position: fixed;
+  padding: 5px;
+  background: #ffffff;
+  width: 50%;
+  max-width: 100%;
+  min-height: 150px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+  z-index: 99;
+}
+#modal_close {
+  position: absolute;
+  top: -2px;
+  right: -3px;
+  width: 25px;
+  height: 25px;
+  color: red;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+#modal_title {
+  text-align: center;
+  font-weight: bold;
+}
+#modal_text {
+  font: 14px Arial;
+}
+.for-modal {
+  display: flex;
+  justify-content: center;
+}
+.text-of-modal {
+  position: absolute;
+  margin-top: 50px;
+}
+.text-of-modal {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+@media screen and (max-width: 1200px) {
+  .firstlist {
+    display: none;
+  }
+  .list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 820px) {
+  .inputs {
+    margin-right: 0px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .forms {
+    display: none;
+  }
+  .txtListThird {
+    display: none;
+  }
+  .containerFooter {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 420px) {
+  .firstlist {
+    display: none;
+  }
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .list2 {
+    width: 50%;
+  }
+}
